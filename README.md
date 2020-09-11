@@ -40,8 +40,10 @@ End Sub
  
  
  
-## Awsome Tools
+## Awsome Tools & Resources
 
 * SpookFlare: https://artofpwn.com/spookflare.html
 * Packet Whisper: https://github.com/TryCatchHCF/PacketWhisper
 * Merlin: https://github.com/Ne0nd0g/merlin
+* Steganography Network: https://github.com/microkost/Steganography-for-IP-networks
+* Mindcrypt Repo: https://github.com/mindcrypt
