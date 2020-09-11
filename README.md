@@ -33,3 +33,4 @@ End Sub
 
 * SpookFlare: https://artofpwn.com/spookflare.html
 * Packet Whisper: https://github.com/TryCatchHCF/PacketWhisper
+* Merlin: https://github.com/Ne0nd0g/merlin
