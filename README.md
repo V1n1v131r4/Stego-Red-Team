@@ -31,7 +31,7 @@ End Sub
 ```
 * `nc -nlvp 444`
 
-
+* VirusTotal report of the artifact generated: https://www.virustotal.com/gui/file/2ee890676fdaf5daf128cd0637f2f86cbe01d8db3bef23c9ee897c841d549095/details
 
 ## Post-Exploitation over HTTP/2 C&C
 
